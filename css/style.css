@@ -413,6 +413,10 @@ footer div li a {
     text-align: center;
     padding: 3rem 1rem;
   }
+
+  main section:nth-child(2) {
+    flex-direction: column-reverse;
+  }
 }
 
 @media (max-width: 950px) {
