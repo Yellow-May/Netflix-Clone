@@ -1,0 +1,600 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #000;
+  color: #fff;
+}
+
+.showcase {
+  height: 100vh;
+  width: 100%;
+  border-bottom: 0.7rem solid #222;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  background: linear-gradient(#000 0%, transparent 30%),
+    linear-gradient(transparent 0%, #000 120%),
+    url(https://assets.nflxext.com/ffe/siteui/vlv3/69b9cce3-4fdc-4ed0-8825-9b24c97c3993/af41d498-4395-4785-9300-c52bcf19c675/NG-en-20201005-popsignuptwoweeks-perspective_alpha_website_small.jpg);
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: normal;
+}
+
+.showcase nav {
+  position: fixed;
+  z-index: 1001;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.showcase nav .brand {
+  height: 2rem;
+  width: 10rem;
+}
+
+.showcase nav .brand svg {
+  height: 100%;
+  width: 100%;
+}
+
+.showcase nav .brand svg path {
+  fill: red;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  outline: none;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  height: 100%;
+  width: 100%;
+  transition: 0.5s linear;
+  background: linear-gradient(to right, transparent, #fff, transparent);
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+.danger {
+  background: red;
+  color: #fff;
+}
+
+.showcase .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.showcase .content .content-head {
+  font-size: 3rem;
+  font-weight: 600;
+  width: 55%;
+  text-align: center;
+}
+
+.showcase .content .content-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+  font-weight: 300;
+  width: 100%;
+}
+
+.showcase .content .content-body h2 {
+  font-size: 1.8rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+.showcase .content .content-body p {
+  font-size: 1.2rem;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 4rem;
+}
+
+form .form-input {
+  width: 65%;
+  height: 100%;
+  position: relative;
+}
+
+form .form-input input {
+  padding-left: 1rem;
+  font-size: 1.2rem;
+  outline: none;
+  border: none;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+form .form-input label {
+  position: absolute;
+  top: 1.3rem;
+  left: 1rem;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+  font-size: 1.2rem;
+  color: #999;
+  text-align: left;
+  transition: 0.5s;
+}
+
+form .form-input input:focus + label,
+form .form-input input:valid + label {
+  transform: translate(-0.8rem, -1.1rem);
+  font-size: 1rem;
+}
+
+form button {
+  width: 35%;
+  height: 100%;
+  border-radius: 0;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main section {
+  width: 100%;
+  border-bottom: 0.8rem solid #222;
+  padding: 0rem 8rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+main section .text {
+  flex-grow: 5;
+}
+
+main section .img {
+  flex-grow: 5;
+}
+
+main section .text h1 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  padding-bottom: 2rem;
+}
+
+main section .text p {
+  font-size: 1.1rem;
+  line-height: 1.2;
+}
+
+main section:nth-child(1) .img {
+  padding-bottom: 3rem;
+  position: relative;
+}
+
+main section:nth-child(1) .img img {
+  height: 400px;
+  width: 540px;
+}
+
+main section:nth-child(1) .img video {
+  position: absolute;
+  top: 5.2rem;
+  left: 1.7rem;
+  height: 220px;
+  width: 480px;
+  z-index: -1;
+}
+
+main section:nth-child(2) .img {
+  padding-bottom: 3rem;
+}
+
+main section:nth-child(2) .img .case {
+  position: relative;
+  height: 400px;
+  width: 540px;
+}
+
+main section:nth-child(2) .img .case img {
+  position: absolute;
+  z-index: -1;
+  height: 100%;
+  width: auto;
+  left: -10%;
+}
+
+main section:nth-child(2) .img .case .card {
+  position: absolute;
+  top: 70%;
+  left: calc(50% - 11%);
+  transform: translateX(-50%);
+  height: 6rem;
+  width: 21rem;
+  border: 2px solid #222;
+  border-radius: 0.8rem;
+  background: #000;
+  padding: 0.5rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main section:nth-child(2) .img .case .card img {
+  left: 1rem;
+  top: 0.5rem;
+  height: calc(100% - 1rem);
+}
+
+main section:nth-child(2) .img .case .card .content {
+  margin-left: -2.5rem;
+}
+
+main section:nth-child(2) .img .case .card .content p {
+  color: #223aff;
+  font-size: 0.9rem;
+}
+
+main section:nth-child(3) .img {
+  padding: 2rem;
+  position: relative;
+}
+
+main section:nth-child(3) .img img {
+  height: 400px;
+  width: 540px;
+}
+
+main section:nth-child(3) .img video {
+  position: absolute;
+  top: 4.8rem;
+  left: 2rem;
+  height: 200px;
+  width: 535px;
+  z-index: -1;
+}
+
+main section.faq {
+  padding: 4rem 0;
+  width: 100%;
+}
+
+main section.faq .content {
+  width: 55%;
+  margin: auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+main section.faq .content h1 {
+  font-size: 2.5rem;
+  padding-bottom: 2rem;
+  text-align: center;
+}
+
+main section.faq .content .card {
+  width: 100%;
+}
+
+main section.faq .content .card .front {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1.5rem;
+  cursor: pointer;
+  font-size: 1.1rem;
+  background: linear-gradient(135deg, transparent, #c3c3c3, transparent);
+}
+
+main section.faq .content .card .front a {
+  color: inherit;
+  text-decoration: none;
+  transform: scale(3);
+  font-weight: 300;
+}
+
+main section.faq .content .card .details {
+  padding: 1rem;
+  margin-top: 0.1rem;
+  background: linear-gradient(135deg, transparent, #c3c3c3, transparent);
+  transition: 0.5s;
+  transform-origin: top;
+  transform: translateX(-150%);
+  display: none;
+}
+
+main section.faq .content .card .details p {
+  text-align: left;
+  line-height: 1.5;
+  padding: 1rem 0.5rem;
+}
+
+.inView {
+  display: block;
+}
+
+main section.faq .content p {
+  padding-top: 2rem;
+  font-size: 1.1rem;
+}
+
+footer {
+  width: 70%;
+  margin: auto;
+  margin-top: 5rem;
+  margin-bottom: 2rem;
+}
+
+footer p {
+  margin: 2rem auto;
+  color: #999;
+}
+
+footer div {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+
+  gap: 5rem;
+}
+
+footer div li {
+  list-style: none;
+  padding: 0.5rem 0;
+}
+
+footer div li a {
+  color: #999;
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 1024px) {
+  main section {
+    gap: 1rem;
+
+    flex-direction: column;
+    text-align: center;
+    padding: 3rem 1rem;
+  }
+}
+
+@media (max-width: 950px) {
+  form {
+    width: 70%;
+    height: auto;
+
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  form .form-input {
+    width: 100%;
+    height: 3rem;
+    position: relative;
+  }
+
+  form .form-input input {
+    font-size: 1rem;
+  }
+
+  form .form-input label {
+    top: 1rem;
+    font-size: 1rem;
+  }
+
+  form .form-input input:focus + label,
+  form .form-input input:valid + label {
+    font-size: 0.9rem;
+  }
+
+  form button {
+    width: auto;
+    height: auto;
+  }
+
+  main section.faq .content {
+    width: 80%;
+  }
+
+  .showcase {
+    height: 70vh;
+  }
+
+  .showcase .content .content-head {
+    font-size: 2.5rem;
+    width: 80%;
+  }
+
+  .showcase .content .content-body {
+    width: 80%;
+  }
+
+  .showcase .content .content-body h2 {
+    font-size: 1.5rem;
+  }
+
+  .showcase .content .content-body p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .showcase nav {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .showcase .content {
+    gap: 0.5rem;
+    margin-top: 5rem;
+  }
+
+  .showcase .content .content-head {
+    font-size: 1.8rem;
+    width: 100%;
+  }
+
+  .showcase .content .content-body {
+    gap: 0.5rem;
+  }
+
+  .showcase .content .content-body h2 {
+    font-size: 1.3rem;
+  }
+
+  .showcase .content .content-body p {
+    font-size: 1rem;
+  }
+
+  main section .text h1 {
+    font-size: 1.8rem;
+    padding-bottom: 1.5rem;
+  }
+
+  main section .text p {
+    font-size: 1rem;
+  }
+
+  main section:nth-child(1) .img {
+    padding-bottom: 0rem;
+    position: relative;
+  }
+
+  main section:nth-child(1) .img img {
+    height: 240px;
+    width: 360px;
+  }
+
+  main section:nth-child(1) .img video {
+    top: 0rem;
+    left: -4rem;
+    height: 240px;
+    width: 480px;
+    transform: scale(0.6);
+  }
+
+  main section:nth-child(2) .img {
+    padding-bottom: 2rem;
+  }
+
+  main section:nth-child(2) .img .case {
+    position: relative;
+    height: 240px;
+    width: 360px;
+  }
+
+  main section:nth-child(2) .img .case img {
+    left: 0%;
+  }
+
+  main section:nth-child(2) .img .case .card {
+    left: calc(50%);
+  }
+
+  main section:nth-child(3) .img {
+    padding: 0rem;
+    position: relative;
+  }
+
+  main section:nth-child(3) .img img {
+    height: 240px;
+    width: 360px;
+  }
+
+  main section:nth-child(3) .img video {
+    top: 0rem;
+    left: 3rem;
+    height: 240px;
+    width: 330px;
+    transform: scale(0.7);
+  }
+
+  main section.faq {
+    padding: 3rem 0;
+  }
+
+  main section.faq .content {
+    width: 100%;
+  }
+
+  main section.faq .content h1 {
+    font-size: 1.8rem;
+  }
+
+  main section.faq .content .card {
+    width: 100%;
+  }
+
+  main section.faq .content .card .front {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+
+  main section.faq .content p {
+    padding-top: 1.5rem;
+    font-size: 1rem;
+  }
+
+  footer div {
+    gap: 3rem;
+  }
+}
